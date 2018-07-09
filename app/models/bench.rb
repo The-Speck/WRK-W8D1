@@ -16,8 +16,9 @@ class Bench < ApplicationRecord
   validates :description, :lat, :lng, presence: true
 
   def self.in_bounds(bounds)
-    Bench.all.select do |bench|
+    Bench.where ( "lat > #{bounds['southWest']['lat'].to_i} AND lng > #{bounds['southWest']['lng'].to_i} AND lat > #{bounds['northEast']['lat'].to_i} AND lng > #{bounds['northEast']['lng'].to_i}" )
 
-    end
+    #   "northEast"=> {"lat"=>"37.80971", "lng"=>"-122.39208"},
+    #   "southWest"=> {"lat"=>"37.74187", "lng"=>"-122.47791"}
   end
 end

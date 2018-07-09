@@ -5,16 +5,22 @@ export default class MarkerManager {
   }
 
   updateMarkers(benches) {
+    this.clearAllMarkers();
     benches.map((bench) => {
-      if (!this.markers[bench.id]){
-        this.createMarkerFromBench(bench);
-      }
+      this.createMarkerFromBench(bench);
     });
+  }
+
+  clearAllMarkers() {
+    debugger
+    for (const marker in this.markers) {
+      this.markers[marker].marker.setMap(null);
+    }
   }
 
   createMarkerFromBench(bench) {
     const latLong = {lat: bench.lat, lng: bench.lng-10};
-    
+
     const marker = new google.maps.Marker({
       position: latLong,
       title: bench.description

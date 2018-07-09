@@ -3,3 +3,4 @@ bundle.js
 bundle.js.map
 tmp/
 tmp/cache/
+.byebug_history
