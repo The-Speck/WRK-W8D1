@@ -3,12 +3,12 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import App from './app.jsx';
 
-const Root = ({ store }) => (
-  <Provider store={ store }>
+const Root = ({ store }) => {
+  return (<Provider store={ store }>
     <HashRouter>
-      <App/>
+      <App />
     </HashRouter>
-  </Provider>
-);
+  </Provider>)
+};
 
 export default Root;

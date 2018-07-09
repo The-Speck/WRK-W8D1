@@ -4,8 +4,9 @@ import { logout } from '../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ entities, session }) => {
+  debugger
   return {
-    currentUser: session.id ? entities.users[session.id] : null
+    currentUser: session.id ? entities.users[session.id] : {}
   };
 };
 
