@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Greeting from './greeting_container';
 import { AuthRoute } from '../util/route_util.jsx';
-import { logout } from '../actions/session_actions';
+
 import SignUp from './signup_form_container';
 import LogIn from './login_form_container';
 import { Link, Route, NavLink, withRouter } from 'react-router-dom';
 
+import Search from './search_container'
 
 const App = ({session}) => {
-  debugger
   return (
     <div>
       <header>
@@ -27,6 +27,7 @@ const App = ({session}) => {
 
           <AuthRoute exact component={SignUp} path="/signup" />
           <AuthRoute exact component={LogIn} path="/login" />
+          <Route exact path="/" component={ Search } />
       </header>
     </div>
   );

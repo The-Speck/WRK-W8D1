@@ -6,6 +6,7 @@ import Root from './components/root';
 // TEST IMPORT
 // import * as APIUtil from './util/session_api_util';
 import * as Actions from './actions/session_actions';
+import { fetchBenches } from './actions/bench_actions';
 // TEST IMPORT
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // TESTING START
+  window.fetchBenches = fetchBenches;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.signup = Actions.signup;
